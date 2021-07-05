@@ -5,13 +5,17 @@
         xmlns:xbim="http://schemas.Xbim.com/Presentation"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XbimViewerIFCDesktop"
+        
         mc:Ignorable="d"
         x:Name="MainWindowViewer"
-        Title="MainWindow" Height="Auto" Width="Auto">
+        Title="Viewer Ifc" Height="Auto" Width="Auto">
     <Window.Resources>
         <ObjectDataProvider x:Key="ModelProvider"  IsInitialLoadEnabled="False" ></ObjectDataProvider>
     </Window.Resources>
+    
     <Grid Name="MainFrame" DataContext="{StaticResource ModelProvider}">
+        
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="25" />
             <RowDefinition Height="*" />
@@ -19,7 +23,7 @@
             <RowDefinition Height="20" />
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
-            <Button x:Name="BtnTest" Content="Abrir" Grid.Row="0" Click="BtnTest_Click" />
+        <Button x:Name="BtnTest" Content="Abrir" Grid.Row="0" Click="BtnTest_Click" />
         <xbim:XbimTreeview x:Name="SpatialControl"  Grid.Row="1"   
                             Indentation="10"
                             BorderThickness="1"
@@ -46,5 +50,6 @@
 
         <ProgressBar Name="ProgressBar" Grid.Row="3"  Height="20" Maximum="100" Minimum="0" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Center"></ProgressBar>
         <TextBlock Name="StatusMsg" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">Parsing</TextBlock>
+    
     </Grid>
 </Window>
